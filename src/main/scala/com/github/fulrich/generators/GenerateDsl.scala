@@ -1,6 +1,7 @@
-package com.makkornall.generators
+package com.github.fulrich.generators
 
 import org.scalacheck.Gen
+
 
 trait GenerateDsl {
   implicit class GeneratorHelper[T](private val generator: Gen[T]) {

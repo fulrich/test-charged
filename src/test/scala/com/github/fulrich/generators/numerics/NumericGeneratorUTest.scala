@@ -1,4 +1,4 @@
-package com.makkornall.generators.numerics
+package com.github.fulrich.generators.numerics
 
 import org.scalatest.{FunSuite, Matchers}
 import org.scalatest.prop.GeneratorDrivenPropertyChecks

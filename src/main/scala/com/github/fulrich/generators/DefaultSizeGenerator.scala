@@ -1,6 +1,6 @@
-package com.makkornall.generators
+package com.github.fulrich.generators
 
-import com.makkornall.generators.api.SizeApi
+import com.github.fulrich.generators.api.SizeApi
 import org.scalacheck.Gen
 
 

@@ -1,4 +1,4 @@
-package com.makkornall.generators.strings
+package com.github.fulrich.generators.strings
 
 import org.scalacheck.Gen
 import org.scalatest.prop.GeneratorDrivenPropertyChecks

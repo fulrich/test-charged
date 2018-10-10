@@ -1,6 +1,6 @@
-package com.makkornall.generators.numerics
+package com.github.fulrich.generators.numerics
 
-import com.makkornall.generators.api.{GenerationSizes, SizeApi}
+import com.github.fulrich.generators.api.{GenerationSizes, SizeApi}
 import org.scalacheck.Gen
 import org.scalacheck.Gen.Choose
 

@@ -1,4 +1,4 @@
-package com.makkornall.generators.api
+package com.github.fulrich.generators.api
 
 
 trait SizeApi[T] {

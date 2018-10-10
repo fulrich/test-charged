@@ -1,6 +1,6 @@
-package com.makkornall.generators.strings
+package com.github.fulrich.generators.strings
 
-import com.makkornall.generators.DefaultSizeGenerator
+import com.github.fulrich.generators.DefaultSizeGenerator
 
 
 trait StringGenerators {

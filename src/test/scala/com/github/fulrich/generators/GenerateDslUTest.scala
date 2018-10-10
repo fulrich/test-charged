@@ -1,4 +1,4 @@
-package com.makkornall.generators
+package com.github.fulrich.generators
 
 import org.scalacheck.Gen
 import org.scalatest.{FunSuite, Matchers}

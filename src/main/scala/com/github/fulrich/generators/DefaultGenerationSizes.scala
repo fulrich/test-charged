@@ -1,6 +1,6 @@
-package com.makkornall.generators
+package com.github.fulrich.generators
 
-import com.makkornall.generators.api.GenerationSizes
+import com.github.fulrich.generators.api.GenerationSizes
 
 
 trait DefaultGenerationSizes extends GenerationSizes {

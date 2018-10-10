@@ -1,4 +1,4 @@
-package com.makkornall.generators.numerics
+package com.github.fulrich.generators.numerics
 
 
 object LongGenerators extends NumericGenerator[Long] {
