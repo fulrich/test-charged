@@ -83,3 +83,11 @@ An example of generating a positive integer value:
 ```scala
 Generate.int.default.positive.value
 ```
+
+##### Other
+There are a number of other generators that exists to generate realistic data quickly and easily.
+
+Name | Description | Methods
+---- | ----------- | ----
+country | Used to generate a random country. | `code, name, default`
+
