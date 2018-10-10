@@ -10,6 +10,7 @@ Add the following line to your build.sbt to add the resolver:
 `resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"`
 
 You can then add the TestCharged dependency to your project:
+
 `"com.github.fulrich" %% "test-charged" % "0.1.1-SNAPSHOT" % "test"`
 
 ## Generators
