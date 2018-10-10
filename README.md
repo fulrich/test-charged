@@ -42,11 +42,11 @@ You can access these generators through the Generate object which is part of the
 #### Basic Generators
 All basic generators conform to the SizeApi which defines 5 default generation sizes:
 
-* tiny
-* short
-* default
-* big
-* huge
+* tiny - Smallest set of data.
+* short - Data is still readable but larger than tiny.
+* default - If you don't know what to use, use this.
+* big - Data is big.  Not human readable.
+* huge - Largest possible data generation.
 
 ##### String
 Below are the provided basic string generators.
@@ -56,15 +56,18 @@ Name | Description | Code
 Alpha | Generates string that only include letters | `Generate.alpha`
 Alpha Numeric | Generates string that only includes letters or digits. | `Generate.alphaNumeric`
 
+An example of generating an alpha only string:
+```scala
+Generate.alpha.default.value
+```
+
 ##### Numeric
 Numeric generators provide an extra ability to choose the sign of the generated value.
 The following methods are provided to do so:
 
-Name | Description
----- | -----------
-positive | Generates a positive numeric value.
-negative | Generates a negative numeric value.
-default | The generated value could be positive of negative.
+* positive - Generates a positive numeric value.
+* negative - Generates a negative numeric value.
+* default - The generated value could be positive of negative.
 
 Below are the provided basic numeric generators.
 
@@ -76,5 +79,5 @@ long | Generates Long values. | `Generate.long`
 
 An example of generating a positive integer value:
 ```scala
-Generate.int.default.positive
+Generate.int.default.positive.value
 ```
