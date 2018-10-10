@@ -17,13 +17,13 @@ jobs:
         - v1-dependencies-{{ checksum "build.sbt" }}
         - v1-dependencies-
 
-    - run: cat /dev/null | sbt test:compile
+    - run: cat /dev/null | sbt +test:compile
 
     - save_cache:
         paths:
         - ~/.m2
         key: v1-dependencies--{{ checksum "build.sbt" }}
 
-    - run: cat /dev/null | sbt test:test
+    - run: cat /dev/null | sbt +test:test
     - store_test_results:
         path: target/test-reports
