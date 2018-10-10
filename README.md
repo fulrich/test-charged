@@ -67,7 +67,7 @@ The following methods are provided to do so:
 
 * positive - Generates a positive numeric value.
 * negative - Generates a negative numeric value.
-* default - The generated value could be positive of negative.
+* default - The generated value could be positive or negative.
 
 Below are the provided basic numeric generators.
 
@@ -76,6 +76,8 @@ Name | Description | Code
 short | Generates Short values. | `Generate.short`
 int | Generates Integer values. | `Generate.int`
 long | Generates Long values. | `Generate.long`
+double | Generates Double values. | `Generate.double`
+float | Generates Float values. | `Generate.float`
 
 An example of generating a positive integer value:
 ```scala
