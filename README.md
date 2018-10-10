@@ -3,6 +3,15 @@ A small library with helpers for generating test data through a simple DSL.
 
 You can super charge water.  You should also super charge your tests.
 
+## Setup
+Currently TestCharged is only on the Sonatype SNAPSHOT server. 
+Add the following line to your build.sbt to add the resolver:
+
+`resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"`
+
+You can then add the TestCharged dependency to your project:
+`"com.github.fulrich" %% "test-charged" % "0.1.1-SNAPSHOT" % "test"`
+
 ## Generators
 ScalaCheck is an amazing library that allows us to create property based checking. 
 I love ScalaCheck but found I was often rewriting some common helpers.
