@@ -16,4 +16,3 @@ class GenerateDslUTest extends FunSuite with Matchers {
     generator.nonEmptySeq.nonEmpty
   }
 }
-gst
