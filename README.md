@@ -1,9 +1,12 @@
 # TestCharged
 A small library with helpers for generating test data through a simple DSL.
+
 You can super charge water.  You should also super charge your tests.
 
 ## Generators
-ScalaCheck is an amazing library that allows us to create property based checking. I love ScalaCheck but found I was often rewriting some common helpers.  They are now provided using TestCharged's generator package.
+ScalaCheck is an amazing library that allows us to create property based checking. 
+I love ScalaCheck but found I was often rewriting some common helpers.
+They are now provided using TestCharged's generator package.
 
 #### Import
 ```scala
