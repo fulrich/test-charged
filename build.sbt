@@ -1,6 +1,6 @@
-name := "TestCharged"
-version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.7"
+name := "Test Charged"
+version := "0.1.1-SNAPSHOT"
+crossScalaVersions := Seq("2.11.12", "2.12.7")
 
 
 // POM Settings
