@@ -1,4 +1,6 @@
 # TestCharged
+[![CircleCI](https://circleci.com/gh/fulrich/TestCharged/tree/master.svg?style=svg)](https://circleci.com/gh/fulrich/TestCharged/tree/master)
+
 A small library with helpers for generating test data through a simple DSL.
 
 You can super charge water.  You should also super charge your tests.
