@@ -40,22 +40,22 @@ import com.github.fulrich.generators._
 I often found I wanted generated values for my tests because I did not want to care about the actual data. The TestCharged generator DSL allows you to do this quickly and easily from any ScalaCheck Gen object.
 
 ```scala
-Gen.alphaStr.value               // String
-Gen.alphaStr.option              // Option[String] - Could be Some or None
-Gen.alphaStr.some                // Some(String) - Will always evaluate to Some
-Gen.alphaStr.seq                 // Seq[String] - Length is arbitrary
-Gen.alphaStr.nonEmptySeq         // Seq[String] - Will never be empty
-Gen.alphaStr.seqOf(size = 3)     // Seq[String] - Will be of size 3
+Generate.alpha.value               // String
+Generate.alpha.option              // Option[String] - Could be Some or None
+Generate.alpha.some                // Some(String) - Will always evaluate to Some
+Generate.alpha.seq                 // Seq[String] - Length is arbitrary
+Generate.alpha.nonEmptySeq         // Seq[String] - Will never be empty
+Generate.alpha.seqOf(size = 3)     // Seq[String] - Will be of size 3
 ``` 
 
 This same DSL can be used to transform a simple `Gen[String]` into more complex generators:
 
 ```scala
-Gen.alphaStr.gen.option              // Gen[Option[String]] - Generated option could be Some or None
-Gen.alphaStr.gen.some                // Gen[Some(String)] - Generated option will always evaluate to Some
-Gen.alphaStr.gen.seq                 // Gen[Seq[String]] - Generated sequence's length is arbitrary
-Gen.alphaStr.gen.nonEmptySeq         // Gen[Seq[String]] - Generated sequence will never be empty
-Gen.alphaStr.gen.seqOf(size = 3)     // Gen[Seq[String]] - Generated sequence will be of size 3
+Generate.alpha.gen.option              // Gen[Option[String]] - Generated option could be Some or None
+Generate.alpha.gen.some                // Gen[Some(String)] - Generated option will always evaluate to Some
+Generate.alpha.gen.seq                 // Gen[Seq[String]] - Generated sequence's length is arbitrary
+Generate.alpha.gen.nonEmptySeq         // Gen[Seq[String]] - Generated sequence will never be empty
+Generate.alpha.gen.seqOf(size = 3)     // Gen[Seq[String]] - Generated sequence will be of size 3
 ```
 
 ### Provided Generators
@@ -65,11 +65,13 @@ You can access these generators through the Generate object which is part of the
 #### Basic Generators
 All basic generators conform to the SizeApi which defines 5 default generation sizes:
 
-*  tiny: Smallest set of data.
-*  short: Data is still readable but larger than tiny.
-*  default: If you don't know what to use, use this.
-*  big: Data is big.  Not human readable.
-*  huge: Largest possible data generation.
+```scala
+Generate.alpha.tiny       // Smallest set of data
+Generate.alpha.short      // Data is still readable but larger than tiny.
+Generate.alpha.default    // If you don't know what to use, use this.
+Generate.alpha.big        // Data is big.  Not human readable.
+Generate.alpha.huge       // Largest possible data generation.
+```
 
 ##### String
 Below are the provided basic string generators.
@@ -88,9 +90,11 @@ Generate.alpha.default.value
 Numeric generators provide an extra ability to choose the sign of the generated value.
 The following methods are provided to do so:
 
-*  positive - Generates a positive numeric value.
-*  negative - Generates a negative numeric value.
-*  default - The generated value could be positive or negative.
+```scala
+Generate.int.default.positive     // Generates a positive numeric value.
+Generate.int.default.negative     // Generates a negative numeric value.
+Generate.int.default.default      // The generated value could be positive or negative.
+```
 
 Below are the provided basic numeric generators.
 
