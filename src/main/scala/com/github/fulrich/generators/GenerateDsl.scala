@@ -7,7 +7,11 @@ trait GenerateDsl {
   implicit class GeneratorHelper[T](private val generator: Gen[T]) {
     val gen = new ExtendedGeneratorsHelper[T](generator)
 
-    def value: T = generator.sample.get
+    def value: T = generator.sample match {
+      case Some(value) => value
+      case None => throw new IllegalArgumentException("Unable to generate the requested data.")
+    }
+
     def some: Option[T] = gen.some.value
     def option: Option[T] = gen.option.value
     def seq: Seq[T] = gen.seq.value
