@@ -37,7 +37,7 @@ import com.github.fulrich.generators._
 ```
 
 ### Concrete Values
-I often found I wanted generated values for my tests because I didn't want to care about the actual data. The TestCharged generator DSL allows you to do this quickly and easily from any ScalaCheck Gen object.
+I often found I wanted generated values for my tests because I did not want to care about the actual data. The TestCharged generator DSL allows you to do this quickly and easily from any ScalaCheck Gen object.
 
 ```scala
 Gen.alphaStr.value               // String
@@ -48,7 +48,7 @@ Gen.alphaStr.nonEmptySeq         // Seq[String] - Will never be empty
 Gen.alphaStr.seqOf(size = 3)     // Seq[String] - Will be of size 3
 ``` 
 
-This same DSL can be used to transform a simple Gen[String] into more complex generators:
+This same DSL can be used to transform a simple `Gen[String]` into more complex generators:
 
 ```scala
 Gen.alphaStr.gen.option              // Gen[Option[String]] - Generated option could be Some or None
@@ -110,7 +110,7 @@ Generate.int.default.positive.value
 ##### Other
 There are a number of other generators that exists to generate realistic data quickly and easily.
 
-Name | Description | Methods
----- | ----------- | ----
-country | Used to generate a random country. | `code, name, default`
+| Name    | Description                        | Methods               |
+| ------- | ---------------------------------- | --------------------- |
+| country | Used to generate a random country. | `code, name, default` |
 
