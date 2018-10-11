@@ -1,5 +1,10 @@
 # TestCharged
-[![CircleCI](https://circleci.com/gh/fulrich/TestCharged/tree/master.svg?style=svg)](https://circleci.com/gh/fulrich/TestCharged/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/fulrich/TestCharged/master.svg?style=flat-square)](https://circleci.com/gh/fulrich/TestCharged/tree/master)
+[![SBT Versions](https://img.shields.io/badge/versions-2.11%20%7C%202.12-blue.svg)](https://github.com/fulrich/TestCharged/blob/455d73f549c5edd0d71d2d13748cd8c458483d20/build.sbt#L3)
+[![Maven Central with version prefix filter](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://oss.sonatype.org/content/repositories/snapshots/com/github/fulrich/test-charged_2.12/)
+
+
+
 
 A small library with helpers for generating test data through a simple DSL.
 
