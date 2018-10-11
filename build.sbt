@@ -1,5 +1,5 @@
 name := "Test Charged"
-version := "0.1.1-SNAPSHOT"
+version := "0.1.2-SNAPSHOT"
 crossScalaVersions := Seq("2.11.12", "2.12.7")
 
 
