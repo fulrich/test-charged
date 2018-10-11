@@ -1,6 +1,8 @@
 package com.github.fulrich.generators
 
+import com.github.fulrich.generators.api.SizeApi
 import org.scalacheck.Gen
+import scala.language.implicitConversions
 
 
 trait GenerateDsl {
@@ -26,4 +28,9 @@ trait GenerateDsl {
     def seq(size: Int): Gen[Seq[T]] = Gen.listOfN(size, generator)
     def nonEmptySeq: Gen[Seq[T]] = Gen.nonEmptyListOf(generator)
   }
+
+  implicit def toGen[A](anySizeApi: DefaultSizeGenerator[A]): Gen[A] = anySizeApi.default
+
+  implicit def toGeneratorHelper[A](anySizeApi: DefaultSizeGenerator[A]): GeneratorHelper[A] =
+    new GeneratorHelper(anySizeApi.default)
 }
