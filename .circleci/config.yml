@@ -36,4 +36,3 @@ jobs:
     - run:
         name: Publish Signed
         command: sbt +publishSigned
-        when: on_pass
