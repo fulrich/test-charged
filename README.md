@@ -65,11 +65,11 @@ You can access these generators through the Generate object which is part of the
 #### Basic Generators
 All basic generators conform to the SizeApi which defines 5 default generation sizes:
 
-* tiny - Smallest set of data.
-* short - Data is still readable but larger than tiny.
-* default - If you don't know what to use, use this.
-* big - Data is big.  Not human readable.
-* huge - Largest possible data generation.
+*  tiny - Smallest set of data.
+*  short - Data is still readable but larger than tiny.
+*  default - If you don't know what to use, use this.
+*  big - Data is big.  Not human readable.
+*  huge - Largest possible data generation.
 
 ##### String
 Below are the provided basic string generators.
@@ -88,9 +88,9 @@ Generate.alpha.default.value
 Numeric generators provide an extra ability to choose the sign of the generated value.
 The following methods are provided to do so:
 
-* positive - Generates a positive numeric value.
-* negative - Generates a negative numeric value.
-* default - The generated value could be positive or negative.
+*  positive - Generates a positive numeric value.
+*  negative - Generates a negative numeric value.
+*  default - The generated value could be positive or negative.
 
 Below are the provided basic numeric generators.
 
