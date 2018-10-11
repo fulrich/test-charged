@@ -65,19 +65,19 @@ You can access these generators through the Generate object which is part of the
 #### Basic Generators
 All basic generators conform to the SizeApi which defines 5 default generation sizes:
 
-    * tiny - Smallest set of data.
-    * short - Data is still readable but larger than tiny.
-    * default - If you don't know what to use, use this.
-    * big - Data is big.  Not human readable.
-    * huge - Largest possible data generation.
+  * tiny - Smallest set of data.
+  * short - Data is still readable but larger than tiny.
+  * default - If you don't know what to use, use this.
+  * big - Data is big.  Not human readable.
+  * huge - Largest possible data generation.
 
 ##### String
 Below are the provided basic string generators.
 
-Name | Description | Code
----- | ----------- | ----
-Alpha | Generates string that only include letters | `Generate.alpha`
-Alpha Numeric | Generates string that only includes letters or digits. | `Generate.alphaNumeric`
+| Name          | Description                                            | Code                    |
+| ------------- | ------------------------------------------------------ | ----------------------- |
+| Alpha         | Generates string that only include letters             | `Generate.alpha`        |
+| Alpha Numeric | Generates string that only includes letters or digits. | `Generate.alphaNumeric` |
 
 An example of generating an alpha only string:
 ```scala
@@ -88,19 +88,19 @@ Generate.alpha.default.value
 Numeric generators provide an extra ability to choose the sign of the generated value.
 The following methods are provided to do so:
 
-    * positive - Generates a positive numeric value.
-    * negative - Generates a negative numeric value.
-    * default - The generated value could be positive or negative.
+  * positive - Generates a positive numeric value.
+  * negative - Generates a negative numeric value.
+  * default - The generated value could be positive or negative.
 
 Below are the provided basic numeric generators.
 
-Name | Description | Code
----- | ----------- | ----
-short | Generates Short values. | `Generate.short`
-int | Generates Integer values. | `Generate.int`
-long | Generates Long values. | `Generate.long`
-double | Generates Double values. | `Generate.double`
-float | Generates Float values. | `Generate.float`
+| Name   | Description               | Code              |
+| ------ | ------------------------- | ----------------- |
+| Short  | Generates short values.   | `Generate.short`  |
+| Int    | Generates integer values. | `Generate.int`    |
+| Long   | Generates long values.    | `Generate.long`   |
+| Double | Generates double values.  | `Generate.double` |
+| Float  | Generates float values.   | `Generate.float`  |
 
 An example of generating a positive integer value:
 ```scala
@@ -110,7 +110,6 @@ Generate.int.default.positive.value
 ##### Other
 There are a number of other generators that exists to generate realistic data quickly and easily.
 
-| Name    | Description                        | Methods               |
+| Name    | Description                        | Generators            |
 | ------- | ---------------------------------- | --------------------- |
 | country | Used to generate a random country. | `code, name, default` |
-
