@@ -11,7 +11,7 @@ abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenera
   def apply(range: T): SignGenerator[T] = SignGenerator[T](range)
   def apply(minimum: T, maximum: T): Gen[T] = {
     require(numeric.lt(minimum, maximum), s"Your minimum value ($minimum) must be less than your maximum ($maximum).")
-    Gen.chooseNum[T](minimum, maximum)
+    Gen.choose[T](minimum, maximum)
   }
 
   override lazy val tiny: SignGenerator[T] = apply(TinyMaximum)

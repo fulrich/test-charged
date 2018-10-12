@@ -114,6 +114,7 @@ Generate.int.default.positive.value
 ##### Other
 There are a number of other generators that exists to generate realistic data quickly and easily.
 
-| Name    | Description                        | Generators            |
-| ------- | ---------------------------------- | --------------------- |
-| country | Used to generate a random country. | `code, name, default` |
+| Name    | Description                        | Generators                      |
+| ------- | ---------------------------------- | ------------------------------- |
+| street  | Used to generate a random streets. | `number, name, suffix, default` |
+| country | Used to generate a random country. | `code, name, default`           |
