@@ -12,7 +12,7 @@ trait GenerateDsl {
 
     def value: T = generator.sample match {
       case Some(value) => value
-      case None => throw new IllegalArgumentException("Unable to generate the requested data.")
+      case None => throw new IllegalArgumentException(GenerateDsl.GenerationFailureMessage)
     }
 
     def some: Option[T] = gen.some.value
@@ -38,4 +38,8 @@ trait GenerateDsl {
   implicit def numericGeneratorUseDefault[A](numericGenerator: NumericGenerator[A]): Gen[A] = numericGenerator.default
   implicit def numericGeneratorUseDefaultHelper[A](signGenerator: NumericGenerator[A]): GeneratorHelper[A] =
     new GeneratorHelper(signGenerator.default.default)
+}
+
+object GenerateDsl {
+  val GenerationFailureMessage = "Unable to generate the requested data."
 }

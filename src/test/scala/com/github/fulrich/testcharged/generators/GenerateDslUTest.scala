@@ -19,6 +19,12 @@ class GenerateDslUTest extends FunSuite with Matchers with GeneratorDrivenProper
     generator.seq should contain only (ConstantGeneratedString)
     generator.nonEmptySeq.nonEmpty
   }
+
+  test("Ensure that a failing generator returns a sensible error message") {
+    val failingGen = Gen.alphaStr.suchThat(_.startsWith("5"))
+
+    the[IllegalArgumentException] thrownBy failingGen.value should have message GenerateDsl.GenerationFailureMessage
+  }
   
   test("If a Gen is required on a DefaultSizeGenerator the .default called can be skipped") {
     forAll(Generate.alpha) { generatedString =>
