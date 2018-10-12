@@ -16,7 +16,11 @@ class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDriven
   }
 
   def testNumericGenerator[A : Numeric : Ordering](numericGenerator: NumericGenerator[A]): Unit = {
+    testMaximumLargerThanMinimum(numericGenerator)
+
     testMinimumMaximum(numericGenerator, numericGenerator.ShortMaximum, numericGenerator.BigMaximum)
+    testRangeGeneration(numericGenerator(numericGenerator.BigMaximum), numericGenerator.BigMaximum)
+
     testRangeGeneration(numericGenerator.tiny, numericGenerator.TinyMaximum)
     testRangeGeneration(numericGenerator.short, numericGenerator.ShortMaximum)
     testRangeGeneration(numericGenerator.default, numericGenerator.DefaultMaximum)
@@ -30,10 +34,17 @@ class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDriven
       generatedValue should be <= range
     }
 
-  def testMinimumMaximum[A: Numeric : Ordering](generator: NumericGenerator[A], minimum: A, maximum: A): Unit = {
+  def testMinimumMaximum[A: Numeric : Ordering](generator: NumericGenerator[A], minimum: A, maximum: A): Unit =
     forAll(generator(minimum, maximum)) { generatedValue =>
       generatedValue should be >= minimum
       generatedValue should be <= maximum
     }
+
+  def testMaximumLargerThanMinimum[A: Numeric](generator: NumericGenerator[A]): Unit = {
+    val minimum = generator.BigMaximum
+    val maximum = generator.ShortMaximum
+    val expected = s"requirement failed: Your minimum value ($minimum) must be less than your maximum ($maximum)."
+
+    the[IllegalArgumentException] thrownBy generator(minimum, maximum) should have message expected
   }
 }

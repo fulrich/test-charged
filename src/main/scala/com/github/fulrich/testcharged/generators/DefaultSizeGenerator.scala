@@ -11,7 +11,7 @@ trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSize
     generate(minimum, maximum)
   }
 
-  lazy val tiny: Gen[T] = apply(minimum = 1, maximum = TinyMaximum)
+  lazy val tiny: Gen[T] = apply(Minimum, TinyMaximum)
   lazy val short: Gen[T] = apply(TinyMaximum, ShortMaximum)
   lazy val default: Gen[T] = apply(ShortMaximum, DefaultMaximum)
   lazy val big: Gen[T] = apply(DefaultMaximum, BigMaximum)
