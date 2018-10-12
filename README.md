@@ -33,7 +33,7 @@ They are now provided using TestCharged's generator package.
 
 ### Import
 ```scala
-import com.github.fulrich.generators._
+import com.github.fulrich.testcharged.generators._
 ```
 
 ### Concrete Values
