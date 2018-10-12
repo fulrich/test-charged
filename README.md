@@ -1,9 +1,8 @@
 # TestCharged
+[![Travis (.org)](https://img.shields.io/travis/fulrich/TestCharged.svg?style=flat-square)](https://travis-ci.org/fulrich/TestCharged)
+[![Codecov](https://img.shields.io/codecov/c/github/fulrich/TestCharged.svg?style=flat-square)](https://codecov.io/gh/fulrich/TestCharged)
 [![Scala Versions](https://img.shields.io/badge/scala-2.11%20%7C%202.12-blue.svg?style=flat-square)](https://github.com/fulrich/TestCharged/blob/455d73f549c5edd0d71d2d13748cd8c458483d20/build.sbt#L3)
 
-[![Travis (.org)](https://img.shields.io/travis/fulrich/TestCharged.svg?style=flat-square)](https://travis-ci.org/fulrich/TestCharged)
-[![Codacy grade](https://img.shields.io/codacy/grade/fc8c140e94324c47bfe42f2569e0f96f.svg?style=flat-square)](https://app.codacy.com/project/fulrich/TestCharged/dashboard)
-[![Codacy coverage](https://img.shields.io/codacy/coverage/fc8c140e94324c47bfe42f2569e0f96f.svg?style=flat-square)](https://app.codacy.com/project/fulrich/TestCharged/dashboard)
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://search.maven.org/artifact/com.github.fulrich/test-charged_2.12/0.1.1/jar)
 [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://oss.sonatype.org/content/repositories/snapshots/com/github/fulrich/test-charged_2.12/)
