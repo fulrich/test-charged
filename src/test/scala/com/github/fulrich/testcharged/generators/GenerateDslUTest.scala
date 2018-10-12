@@ -1,5 +1,6 @@
 package com.github.fulrich.testcharged.generators
 
+import com.github.fulrich.testcharged.generators.numerics.IntGenerators
 import com.github.fulrich.testcharged.generators.strings.AlphaGenerators
 import org.scalacheck.Gen
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
@@ -19,17 +20,39 @@ class GenerateDslUTest extends FunSuite with Matchers with GeneratorDrivenProper
     generator.nonEmptySeq.nonEmpty
   }
   
-  test("If a Gen is required the .default called can be skipped") {
+  test("If a Gen is required on a DefaultSizeGenerator the .default called can be skipped") {
     forAll(Generate.alpha) { generatedString =>
       generatedString.length should be >= AlphaGenerators.ShortMaximum
       generatedString.length should be <= AlphaGenerators.DefaultMaximum
     }
   }
 
-  test("If using the default size do not need to use the .default method") {
+  test("If using the default size on a DefaultSizeGenerator do not need to use the .default method") {
     val generatedString = Generate.alpha.value
 
     generatedString.length should be >= AlphaGenerators.ShortMaximum
     generatedString.length should be <= AlphaGenerators.DefaultMaximum
+  }
+
+
+  test("When accessing NumericGenerator value can omit the chained default calls") {
+    val generatedNumeric = Generate.int.value
+
+    generatedNumeric should be >= Math.negateExact(IntGenerators.DefaultMaximum)
+    generatedNumeric should be <= IntGenerators.DefaultMaximum
+  }
+
+  test("When accessing a NumericGenerator can omit the chained default calls when a Gen is required") {
+    forAll(Generate.int) { generatedInt =>
+      generatedInt should be >= Math.negateExact(IntGenerators.DefaultMaximum)
+      generatedInt should be <= IntGenerators.DefaultMaximum
+    }
+  }
+
+  test("When accessing a NumericGenerator's SignGenerator can omit the default when a Gen is required") {
+    forAll(Generate.int.short) { generatedInt =>
+      generatedInt should be >= Math.negateExact(IntGenerators.ShortMaximum)
+      generatedInt should be <= IntGenerators.ShortMaximum
+    }
   }
 }
