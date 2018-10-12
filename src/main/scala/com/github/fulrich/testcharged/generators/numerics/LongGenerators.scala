@@ -2,10 +2,10 @@ package com.github.fulrich.testcharged.generators.numerics
 
 
 object LongGenerators extends NumericGenerator[Long] {
-  override val Minimum: Int = Long.MinValue.toInt
-  override val TinyMaximum: Int = 25
-  override val ShortMaximum: Int = 250
-  override val DefaultMaximum: Int = 5000
-  override val BigMaximum: Int = 20000
-  override val HugeMaximum: Int = Long.MaxValue.toInt
+  override val Minimum: Long = Long.MinValue
+  override val TinyMaximum: Long = 25
+  override val ShortMaximum: Long = 250
+  override val DefaultMaximum: Long = 5000
+  override val BigMaximum: Long = 20000
+  override val HugeMaximum: Long = Long.MaxValue
 }

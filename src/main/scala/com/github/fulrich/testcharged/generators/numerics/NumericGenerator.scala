@@ -5,7 +5,7 @@ import org.scalacheck.Gen
 import org.scalacheck.Gen.Choose
 
 
-abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenerator[T]] with GenerationSizes {
+abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenerator[T]] with GenerationSizes[T] {
   val numeric: Numeric[T] = implicitly[Numeric[T]]
 
   def apply(range: Int): SignGenerator[T] = SignGenerator[T](numeric.fromInt(range))
@@ -14,9 +14,9 @@ abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenera
     Gen.chooseNum[T](numeric.fromInt(minimum), numeric.fromInt(maximum))
   }
 
-  override lazy val tiny: SignGenerator[T] = SignGenerator[T](numeric.fromInt(TinyMaximum))
-  override lazy val short: SignGenerator[T] = SignGenerator[T](numeric.fromInt(ShortMaximum))
-  override lazy val default: SignGenerator[T] = SignGenerator[T](numeric.fromInt(DefaultMaximum))
-  override lazy val big: SignGenerator[T] = SignGenerator[T](numeric.fromInt(BigMaximum))
-  override lazy val huge: SignGenerator[T] = SignGenerator[T](numeric.fromInt(HugeMaximum))
+  override lazy val tiny: SignGenerator[T] = SignGenerator[T](TinyMaximum)
+  override lazy val short: SignGenerator[T] = SignGenerator[T](ShortMaximum)
+  override lazy val default: SignGenerator[T] = SignGenerator[T](DefaultMaximum)
+  override lazy val big: SignGenerator[T] = SignGenerator[T](BigMaximum)
+  override lazy val huge: SignGenerator[T] = SignGenerator[T](HugeMaximum)
 }

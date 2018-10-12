@@ -1,11 +1,11 @@
 package com.github.fulrich.testcharged.generators.api
 
 
-trait GenerationSizes {
-  val Minimum: Int
-  val TinyMaximum: Int
-  val ShortMaximum: Int
-  val DefaultMaximum: Int
-  val BigMaximum: Int
-  val HugeMaximum: Int
+trait GenerationSizes[T] {
+  val Minimum: T
+  val TinyMaximum: T
+  val ShortMaximum: T
+  val DefaultMaximum: T
+  val BigMaximum: T
+  val HugeMaximum: T
 }

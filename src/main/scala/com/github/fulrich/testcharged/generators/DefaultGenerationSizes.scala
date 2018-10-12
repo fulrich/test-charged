@@ -3,7 +3,7 @@ package com.github.fulrich.testcharged.generators
 import com.github.fulrich.testcharged.generators.api.GenerationSizes
 
 
-trait DefaultGenerationSizes extends GenerationSizes {
+trait DefaultGenerationSizes extends GenerationSizes[Int] {
   val Minimum: Int = 0
   val TinyMaximum: Int = 8
   val ShortMaximum: Int = 16
