@@ -1,6 +1,6 @@
 name: Test Charged
 baseurl: /test-charged
-description: Test Charged
+description: Supercharge your testing
 highlighter: rouge
 docs: true
 collections:
