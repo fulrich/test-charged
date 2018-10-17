@@ -1,0 +1,16 @@
+options:
+  - title: Quick Start
+    url: docs/index.html
+    menu_section: intro
+
+  - title: Generators
+    url: docs/generators/generators.html
+    menu_section: generators
+
+    nested_options:
+      - title: String Generators
+        url: docs/generators/string-generators.html
+      - title: Numeric Generators
+        url: docs/generators/numeric-generators.html
+      - title: Other Generators
+        url: docs/generators/other-generators.html

@@ -29,6 +29,28 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % ScalacticVersion % "test",
 )
 
+// Documentation
+lazy val micrositeSettings = Seq(
+  micrositeName := "Test Charged",
+  micrositeDescription := "Supercharge your testing",
+  micrositeBaseUrl := "/test-charged",
+  micrositeDocumentationUrl := "/test-charged/docs",
+  micrositeAuthor := "fulrich",
+  micrositeHomepage := "https://fulrich.github.io/test-charged/",
+  micrositeGithubOwner := "fulrich",
+  micrositeGithubRepo := "test-charged",
+  micrositeGithubToken := sys.env.get("GITHUB_TOKEN"),
+  micrositePushSiteWith := GitHub4s,
+  micrositeGitterChannel := false,
+  micrositeShareOnSocial := false,
+  micrositeFooterText := None
+)
+
+lazy val docs = (project in file("docs")).
+  enablePlugins(MicrositesPlugin).
+  settings(publishArtifact := false).
+  settings(micrositeSettings)
+
 
 // Publishing
 publishTo := Some(
