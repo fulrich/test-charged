@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* .fa-facebook .fa-twitter .fa-google-plus */
+#page-content-wrapper .nav ul li:not([id]) {
+    display: none;
+}
