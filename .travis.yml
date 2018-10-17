@@ -18,8 +18,7 @@ jobs:
     - env: JOB=microsite
       scala:
         - 2.12.7
-      jdk:
-        - oraclejdk8
+      jdk: oraclejdk8
       before_install:
         - export PATH=${PATH}:./vendor/bundle
       install:
