@@ -18,11 +18,12 @@ You can super charge water.  You should also super charge your tests.
 
 ## Setup
 
-The currently released build should be shown on the badges at the top of this README.
+The currently released build should be shown on the badges at the top of this page.
+
 Simply add that dependency to your SBT file:
 
 ```scala 
-libraryDependencies += "com.github.fulrich" %% "test-charged_2.12" % "0.1.1"
+libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.1"
 ```
 
 Our SNAPSHOT version is also shown at the badges on the top.  
