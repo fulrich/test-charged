@@ -1,5 +1,5 @@
 name: Test Charged
-baseurl: /testcharged
+baseurl: /test-charged
 description: Test Charged
 highlighter: rouge
 docs: true
