@@ -1,5 +1,12 @@
 ---
 layout: home
+section: "home"
+title: "Home"
+position: 1
+technologies:
+ - first: ["Scala", "TestCharged library is completely written in Scala."]
+ - second: ["ScalaTest", "Some of the helpers provided by TestCharged assume the use of ScalaTest."]
+ - third: ["ScalaCheck", "The generators of TestCharged are based on the fantastic ScalaCheck library."]
 ---
 
 # TestCharged

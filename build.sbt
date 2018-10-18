@@ -39,6 +39,7 @@ lazy val micrositeSettings = Seq(
   micrositeHomepage := "https://fulrich.github.io/test-charged/",
   micrositeGithubOwner := "fulrich",
   micrositeGithubRepo := "test-charged",
+  micrositeHighlightTheme := "darcula",
   micrositeGithubToken := sys.env.get("GITHUB_TOKEN"),
   micrositePushSiteWith := GitHub4s,
   micrositeGitterChannel := false,
