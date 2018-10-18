@@ -1,17 +1,32 @@
+sudo: false
+
 language: scala
+
 scala:
   - 2.12.7
   - 2.11.12
+
 jdk:
   - oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.ivy2/cache
+  - $HOME/.sbt/boot/
+
 env:
   - JOB=Test
 
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test coverageReport
 
+before_cache:
+  - find $HOME/.sbt -name "*.lock" | xargs rm
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
 
 jobs:
   include:
