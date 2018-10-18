@@ -3,8 +3,8 @@ layout: home
 ---
 
 # TestCharged
-[![Travis (.org)](https://img.shields.io/travis/fulrich/TestCharged.svg?style=flat-square)](https://travis-ci.org/fulrich/TestCharged)
-[![Codecov](https://img.shields.io/codecov/c/github/fulrich/TestCharged.svg?style=flat-square)](https://codecov.io/gh/fulrich/TestCharged)
+[![Travis (.org)](https://img.shields.io/travis/fulrich/test-charged.svg?style=flat-square)](https://travis-ci.org/fulrich/TestCharged)
+[![Codecov](https://img.shields.io/codecov/c/github/fulrich/test-charged.svg?style=flat-square)](https://codecov.io/gh/fulrich/TestCharged)
 [![Scala Versions](https://img.shields.io/badge/scala-2.11%20%7C%202.12-blue.svg?style=flat-square)](https://github.com/fulrich/TestCharged/blob/455d73f549c5edd0d71d2d13748cd8c458483d20/build.sbt#L3)
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://search.maven.org/artifact/com.github.fulrich/test-charged_2.12/0.1.1/jar)
