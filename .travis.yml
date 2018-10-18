@@ -5,7 +5,7 @@ scala:
 jdk:
   - oraclejdk8
 env:
-  - JOB=Test
+  - JOB=Test-$TRAVIS_SCALA_VERSION
 
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test coverageReport
@@ -15,7 +15,7 @@ after_success:
 
 jobs:
   include:
-    - env: JOB=microsite
+    - env: JOB=Documentation
       scala:
         - 2.12.7
       jdk: oraclejdk8
