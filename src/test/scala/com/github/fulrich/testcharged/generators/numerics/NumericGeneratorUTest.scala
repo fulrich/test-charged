@@ -33,7 +33,7 @@ class NumericGeneratorUTest extends FunSuite with Matchers with GeneratorDrivenP
   }
 
   test("The short size should create a SignGenerator with the ShortMaximum as the range") {
-    TestIntGenerators.short.range shouldBe 10
+    TestIntGenerators.small.range shouldBe 10
   }
 
   test("The default size should create a SignGenerator with the DefaultMaximum as the range") {
@@ -41,7 +41,7 @@ class NumericGeneratorUTest extends FunSuite with Matchers with GeneratorDrivenP
   }
 
   test("The big size should create a SignGenerator with the BigMaximum as the range") {
-    TestIntGenerators.big.range shouldBe 20
+    TestIntGenerators.large.range shouldBe 20
   }
 
   test("The huge size should create a SignGenerator with the HugeMaximum as the range") {

@@ -19,9 +19,9 @@ class StringGeneratorsUTest extends FunSuite with Matchers with GeneratorDrivenP
     testRangeGeneration(generator(generator.BigMaximum), generator.Minimum, generator.BigMaximum)(checkCharacter)
 
     testRangeGeneration(generator.tiny, generator.Minimum, generator.TinyMaximum)(checkCharacter)
-    testRangeGeneration(generator.short, generator.TinyMaximum, generator.ShortMaximum)(checkCharacter)
+    testRangeGeneration(generator.small, generator.TinyMaximum, generator.ShortMaximum)(checkCharacter)
     testRangeGeneration(generator.default, generator.ShortMaximum, generator.DefaultMaximum)(checkCharacter)
-    testRangeGeneration(generator.big, generator.DefaultMaximum, generator.BigMaximum)(checkCharacter)
+    testRangeGeneration(generator.large, generator.DefaultMaximum, generator.BigMaximum)(checkCharacter)
     testRangeGeneration(generator.huge, generator.BigMaximum, generator.HugeMaximum)(checkCharacter)
   }
 

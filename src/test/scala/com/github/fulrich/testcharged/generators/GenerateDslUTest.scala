@@ -56,7 +56,7 @@ class GenerateDslUTest extends FunSuite with Matchers with GeneratorDrivenProper
   }
 
   test("When accessing a NumericGenerator's SignGenerator can omit the default when a Gen is required") {
-    forAll(Generate.int.short) { generatedInt =>
+    forAll(Generate.int.small) { generatedInt =>
       generatedInt should be >= Math.negateExact(IntGenerators.ShortMaximum)
       generatedInt should be <= IntGenerators.ShortMaximum
     }

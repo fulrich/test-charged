@@ -12,9 +12,9 @@ trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSize
   }
 
   override lazy val tiny: Gen[T] = apply(Minimum, TinyMaximum)
-  override lazy val short: Gen[T] = apply(TinyMaximum, ShortMaximum)
+  override lazy val small: Gen[T] = apply(TinyMaximum, ShortMaximum)
   override lazy val default: Gen[T] = apply(ShortMaximum, DefaultMaximum)
-  override lazy val big: Gen[T] = apply(DefaultMaximum, BigMaximum)
+  override lazy val large: Gen[T] = apply(DefaultMaximum, BigMaximum)
   override lazy val huge: Gen[T] = apply(BigMaximum, HugeMaximum)
 
   protected def generate(minimum: Long, maximum: Long): Gen[T]

@@ -39,7 +39,7 @@ class UserPersistenceTest extends FunSuite {
 ```
 
 If the User structure ever changes every test that follows a similar pattern will need to be updated.
-If there was a fixture instead then each fixture would need to be updated.
+If there was a fixture instead each fixture would need to be updated.
 If you instead use a generator you simply update the generator and your tests are updated everywhere:
 
 ```scala

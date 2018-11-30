@@ -44,8 +44,8 @@ All basic generators conform to the SizeApi which defines 5 default generation s
 
 ```scala
 Generate.alpha.tiny       // Smallest set of data
-Generate.alpha.short      // Data is still readable but larger than tiny.
+Generate.alpha.small      // Data is still readable but larger than tiny.
 Generate.alpha.default    // If you don't know what to use, use this.
-Generate.alpha.big        // Data is big.  Not human readable.
+Generate.alpha.large      // Data is large.  Not human readable.
 Generate.alpha.huge       // Largest possible data generation.
 ```

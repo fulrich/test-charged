@@ -22,9 +22,9 @@ class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDriven
     testRangeGeneration(numericGenerator(numericGenerator.BigMaximum), numericGenerator.BigMaximum)
 
     testRangeGeneration(numericGenerator.tiny, numericGenerator.TinyMaximum)
-    testRangeGeneration(numericGenerator.short, numericGenerator.ShortMaximum)
+    testRangeGeneration(numericGenerator.small, numericGenerator.ShortMaximum)
     testRangeGeneration(numericGenerator.default, numericGenerator.DefaultMaximum)
-    testRangeGeneration(numericGenerator.big, numericGenerator.BigMaximum)
+    testRangeGeneration(numericGenerator.large, numericGenerator.BigMaximum)
     testRangeGeneration(numericGenerator.huge, numericGenerator.HugeMaximum)
   }
 

@@ -15,8 +15,8 @@ abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenera
   }
 
   override lazy val tiny: SignGenerator[T] = apply(TinyMaximum)
-  override lazy val short: SignGenerator[T] = apply(ShortMaximum)
+  override lazy val small: SignGenerator[T] = apply(ShortMaximum)
   override lazy val default: SignGenerator[T] = apply(DefaultMaximum)
-  override lazy val big: SignGenerator[T] = apply(BigMaximum)
+  override lazy val large: SignGenerator[T] = apply(BigMaximum)
   override lazy val huge: SignGenerator[T] = apply(HugeMaximum)
 }
