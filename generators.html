@@ -32,7 +32,7 @@ This lead to much better tests that actually testing what we needed</p>
 </div>
 
 <p>If the User structure ever changes every test that follows a similar pattern will need to be updated.
-If there was a fixture instead then each fixture would need to be updated.
+If there was a fixture instead each fixture would need to be updated.
 If you instead use a generator you simply update the generator and your tests are updated everywhere:</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPersistenceTest</span> <span class="k">extends</span> <span class="nc">FunSuite</span> <span class="o">{</span>
