@@ -1,5 +1,5 @@
 name := "Test Charged"
-version := "0.1.3-SNAPSHOT"
+version := "0.1.5-SNAPSHOT"
 crossScalaVersions := Seq("2.11.12", "2.12.7")
 
 
@@ -47,13 +47,16 @@ lazy val micrositeSettings = Seq(
   micrositeFooterText := None
 )
 
+lazy val root = project in file(".")
+
 lazy val docs = (project in file("docs")).
   enablePlugins(MicrositesPlugin).
   settings(publishArtifact := false).
   settings(micrositeSettings)
 
-
 // Publishing
+publishConfiguration := publishConfiguration.value.withOverwrite(true)
+publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
 publishTo := Some(
   if (isSnapshot.value)
     Opts.resolver.sonatypeSnapshots
