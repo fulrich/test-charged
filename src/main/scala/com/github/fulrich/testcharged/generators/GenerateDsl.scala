@@ -33,7 +33,7 @@ trait GenerateDsl {
   implicit def toGen[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): Gen[A] =
     defaultCaller(defaultApi)
 
-  implicit def toGenerateHelper[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): GeneratorHelper[A] =
+  implicit def toGeneratorHelper[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): GeneratorHelper[A] =
     new GeneratorHelper(defaultCaller(defaultApi))
 }
 
