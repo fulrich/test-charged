@@ -1,7 +1,6 @@
 package com.github.fulrich.testcharged.generators.numerics
 
-import com.github.fulrich.testcharged.generators.DefaultCaller
-import com.github.fulrich.testcharged.generators.api.{GenerationSizes, SizeApi}
+import com.github.fulrich.testcharged.generators.api.{DefaultCaller, GenerationSizes, SizeApi}
 import org.scalacheck.Gen
 import org.scalacheck.Gen.Choose
 
@@ -25,6 +24,6 @@ abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenera
 object NumericGenerator {
   implicit def numericGeneratorDefaultCaller[T : Numeric : Choose]: DefaultCaller[T, NumericGenerator[T]] =
     new DefaultCaller[T, NumericGenerator[T]] {
-      override def callDefault(callee: NumericGenerator[T]): Gen[T] = callee.default.default
+      override def apply(callee: NumericGenerator[T]): Gen[T] = callee.default.default
     }
 }

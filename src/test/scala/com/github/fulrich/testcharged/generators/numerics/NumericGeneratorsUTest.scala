@@ -1,6 +1,7 @@
 package com.github.fulrich.testcharged.generators.numerics
 
-import com.github.fulrich.testcharged.generators.{DefaultCaller, GenerateDsl}
+import com.github.fulrich.testcharged.generators.GenerateDsl
+import com.github.fulrich.testcharged.generators.api.DefaultCaller
 import org.scalacheck.Gen
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FunSuite, Matchers}

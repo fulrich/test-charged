@@ -1,5 +1,6 @@
 package com.github.fulrich.testcharged.generators
 
+import com.github.fulrich.testcharged.generators.api.DefaultCaller
 import org.scalacheck.Gen
 
 import scala.language.implicitConversions
@@ -30,10 +31,10 @@ trait GenerateDsl {
   }
 
   implicit def toGen[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): Gen[A] =
-    defaultCaller.callDefault(defaultApi)
+    defaultCaller(defaultApi)
 
   implicit def toGenerateHelper[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): GeneratorHelper[A] =
-    new GeneratorHelper(defaultCaller.callDefault(defaultApi))
+    new GeneratorHelper(defaultCaller(defaultApi))
 }
 
 object GenerateDsl {

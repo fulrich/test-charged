@@ -1,10 +1,10 @@
 package com.github.fulrich.testcharged.generators
 
-import com.github.fulrich.testcharged.generators.api.{DefaultApi, SizeApi}
+import com.github.fulrich.testcharged.generators.api.{DefaultCaller, SizeApi}
 import org.scalacheck.Gen
 
 
-trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSizes with DefaultApi[T]{
+trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSizes {
   def apply(maximum: Long): Gen[T] = apply(Minimum, maximum)
   def apply(minimum: Long, maximum: Long): Gen[T] = {
     require(minimum < maximum, s"Your minimum value ($minimum) must be less than your maximum ($maximum).")
@@ -23,6 +23,6 @@ trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSize
 object DefaultSizeGenerator {
   implicit def numericGeneratorDefaultCaller[T]: DefaultCaller[T, DefaultSizeGenerator[T]] =
     new DefaultCaller[T, DefaultSizeGenerator[T]] {
-      override def callDefault(callee: DefaultSizeGenerator[T]): Gen[T] = callee.default
+      override def apply(callee: DefaultSizeGenerator[T]): Gen[T] = callee.default
     }
 }
