@@ -1,7 +1,5 @@
 package com.github.fulrich.testcharged.generators
 
-import com.github.fulrich.testcharged.generators.api.DefaultApi
-import com.github.fulrich.testcharged.generators.numerics.NumericGenerator
 import org.scalacheck.Gen
 
 import scala.language.implicitConversions
@@ -31,12 +29,11 @@ trait GenerateDsl {
     def nonEmptySeq: Gen[Seq[T]] = Gen.nonEmptyListOf(generator)
   }
 
-  implicit def defaultApiUseDefault[T](defaultApi: DefaultApi[T]): Gen[T] = defaultApi.default
-  implicit def defaultApiToHelper[T](defaultApi: DefaultApi[T]): GeneratorHelper[T] = new GeneratorHelper(defaultApi)
+  implicit def toGen[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): Gen[A] =
+    defaultCaller.callDefault(defaultApi)
 
-  implicit def numericGeneratorUseDefault[A](numericGenerator: NumericGenerator[A]): Gen[A] = numericGenerator.default
-  implicit def numericGeneratorUseDefaultHelper[A](numericGenerator: NumericGenerator[A]): GeneratorHelper[A] =
-    new GeneratorHelper(numericGenerator.default)
+  implicit def toGenerateHelper[A, T](defaultApi: T)(implicit defaultCaller: DefaultCaller[A, T]): GeneratorHelper[A] =
+    new GeneratorHelper(defaultCaller.callDefault(defaultApi))
 }
 
 object GenerateDsl {

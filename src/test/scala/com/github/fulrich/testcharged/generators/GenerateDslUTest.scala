@@ -44,6 +44,8 @@ class GenerateDslUTest extends FunSuite with Matchers with GeneratorDrivenProper
   test("When accessing NumericGenerator value can omit the chained default calls") {
     val generatedNumeric = Generate.int.value
 
+    Generate.int.default.default.value
+
     generatedNumeric should be >= Math.negateExact(IntGenerators.DefaultMaximum)
     generatedNumeric should be <= IntGenerators.DefaultMaximum
   }

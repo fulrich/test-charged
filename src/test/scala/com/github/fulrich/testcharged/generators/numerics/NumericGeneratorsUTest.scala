@@ -1,11 +1,12 @@
 package com.github.fulrich.testcharged.generators.numerics
 
+import com.github.fulrich.testcharged.generators.{DefaultCaller, GenerateDsl}
 import org.scalacheck.Gen
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FunSuite, Matchers}
 
 
-class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDrivenPropertyChecks{
+class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDrivenPropertyChecks with GenerateDsl {
 
   test("All Numeric based generators conform to the NumericGenerator API") {
     testNumericGenerator(ShortGenerators)
@@ -15,7 +16,8 @@ class NumericGeneratorsUTest extends FunSuite with Matchers with GeneratorDriven
     testNumericGenerator(DoubleGenerators)
   }
 
-  def testNumericGenerator[A : Numeric : Ordering](numericGenerator: NumericGenerator[A]): Unit = {
+  def testNumericGenerator[A : Numeric : Ordering](numericGenerator: NumericGenerator[A])
+                                                  (implicit defaultCaller: DefaultCaller[A, SignGenerator[A]]): Unit = {
     testMaximumLargerThanMinimum(numericGenerator)
 
     testMinimumMaximum(numericGenerator, numericGenerator.ShortMaximum, numericGenerator.BigMaximum)

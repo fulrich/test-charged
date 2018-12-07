@@ -19,3 +19,10 @@ trait DefaultSizeGenerator[T] extends SizeApi[Gen[T]] with DefaultGenerationSize
 
   protected def generate(minimum: Long, maximum: Long): Gen[T]
 }
+
+object DefaultSizeGenerator {
+  implicit def numericGeneratorDefaultCaller[T]: DefaultCaller[T, DefaultSizeGenerator[T]] =
+    new DefaultCaller[T, DefaultSizeGenerator[T]] {
+      override def callDefault(callee: DefaultSizeGenerator[T]): Gen[T] = callee.default
+    }
+}

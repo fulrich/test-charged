@@ -1,5 +1,6 @@
 package com.github.fulrich.testcharged.generators.numerics
 
+import com.github.fulrich.testcharged.generators.DefaultCaller
 import com.github.fulrich.testcharged.generators.api.{GenerationSizes, SizeApi}
 import org.scalacheck.Gen
 import org.scalacheck.Gen.Choose
@@ -19,4 +20,11 @@ abstract class NumericGenerator[T : Numeric : Choose] extends SizeApi[SignGenera
   override lazy val default: SignGenerator[T] = apply(DefaultMaximum)
   override lazy val large: SignGenerator[T] = apply(BigMaximum)
   override lazy val huge: SignGenerator[T] = apply(HugeMaximum)
+}
+
+object NumericGenerator {
+  implicit def numericGeneratorDefaultCaller[T : Numeric : Choose]: DefaultCaller[T, NumericGenerator[T]] =
+    new DefaultCaller[T, NumericGenerator[T]] {
+      override def callDefault(callee: NumericGenerator[T]): Gen[T] = callee.default.default
+    }
 }
