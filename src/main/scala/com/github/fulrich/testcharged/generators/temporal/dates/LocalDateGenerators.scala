@@ -14,8 +14,8 @@ object LocalDateGenerators extends TemporalGenerator[LocalDate] with DateRanges 
 
   def apply(min: Edge = Default, max: Edge = Default)(implicit now: NowProvider): Gen[LocalDate] = for {
     createdInstant <- InstantGenerators(
-      Instant.ofEpochSecond(min(now.localDate).toEpochSecond(LocalTime.MIDNIGHT, ZoneOffset.UTC)),
-      Instant.ofEpochSecond(max(now.localDate).toEpochSecond(LocalTime.MIDNIGHT, ZoneOffset.UTC)),
+      Instant.ofEpochSecond(min(now.localDate).atStartOfDay(ZoneOffset.UTC).toEpochSecond),
+      Instant.ofEpochSecond(max(now.localDate).atStartOfDay(ZoneOffset.UTC).toEpochSecond),
     )
-  } yield LocalDate.ofInstant(createdInstant, ZoneOffset.UTC)
+  } yield LocalDateTime.ofInstant(createdInstant, ZoneOffset.UTC).toLocalDate
 }

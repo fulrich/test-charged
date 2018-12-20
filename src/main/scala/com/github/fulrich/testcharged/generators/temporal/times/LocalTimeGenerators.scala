@@ -1,6 +1,6 @@
 package com.github.fulrich.testcharged.generators.temporal.times
 
-import java.time.{Instant, LocalDate, LocalTime, ZoneOffset}
+import java.time._
 
 import com.github.fulrich.testcharged.generators.temporal.instant.InstantGenerators
 import com.github.fulrich.testcharged.generators.temporal.{NowProvider, TemporalGenerator}
@@ -14,8 +14,8 @@ object LocalTimeGenerators extends TemporalGenerator[LocalTime] with TimeRanges 
 
   def apply(min: Edge = Default, max: Edge = Default)(implicit now: NowProvider): Gen[LocalTime] = for {
     createdInstant <- InstantGenerators(
-      Instant.ofEpochSecond(min(now.localTime).toEpochSecond(LocalDate.EPOCH, ZoneOffset.UTC)),
-      Instant.ofEpochSecond(max(now.localTime).toEpochSecond(LocalDate.EPOCH, ZoneOffset.UTC))
+      Instant.ofEpochSecond(min(now.localTime).atDate(LocalDate.EPOCH).atZone(ZoneOffset.UTC).toEpochSecond),
+      Instant.ofEpochSecond(max(now.localTime).atDate(LocalDate.EPOCH).atZone(ZoneOffset.UTC).toEpochSecond)
     )
-  } yield LocalTime.ofInstant(createdInstant, ZoneOffset.UTC)
+  } yield LocalDateTime.ofInstant(createdInstant, ZoneOffset.UTC).toLocalTime
 }
