@@ -2,12 +2,12 @@ package com.github.fulrich.testcharged.generators.temporal.times
 
 import java.time.{LocalDate, LocalDateTime, LocalTime}
 
-import com.github.fulrich.testcharged.generators.temporal.{NowProvider, TemporalTesting}
+import com.github.fulrich.testcharged.generators.temporal.{Epoch, NowProvider, TemporalTesting}
 
 
 class LocalTimeGeneratorsUTest extends TemporalTesting with TimeRanges {
   val CurrentTime: LocalTime = LocalTime.of(12, 30)
-  implicit val NowProvider: NowProvider = now(LocalDateTime.of(LocalDate.EPOCH, CurrentTime))
+  implicit val NowProvider: NowProvider = now(LocalDateTime.of(Epoch.LocalDate, CurrentTime))
 
   test ("Ensure LocalTime generation helpers generate within the defined presets") {
     forAll(LocalTimeGenerators.distancePast) { withinRange(CurrentTime.minus(DistantPast), CurrentTime) }
