@@ -15,5 +15,7 @@ trait NowProvider {
 }
 
 object NowProvider {
-  implicit val DefaultNowProvider: NowProvider = () => Clock.systemDefaultZone
+  implicit val DefaultNowProvider: NowProvider = new NowProvider {
+    override def apply(): Clock = Clock.systemDefaultZone
+  }
 }

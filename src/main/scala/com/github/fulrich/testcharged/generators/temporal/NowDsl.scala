@@ -4,9 +4,13 @@ import java.time._
 
 
 trait NowDsl {
-  def now(instant: Instant, zone: ZoneOffset = ZoneOffset.UTC): NowProvider =
-    () => Clock.fixed(instant, zone)
+  def now(fixedInstant: Instant, fixedZone: ZoneOffset = ZoneOffset.UTC): NowProvider = new NowProvider {
+    override def apply(): Clock =
+      Clock.fixed(fixedInstant, fixedZone)
+  }
 
-  def now(localDateTime: LocalDateTime): NowProvider =
-    () => Clock.fixed(Instant.ofEpochSecond(localDateTime.toEpochSecond(ZoneOffset.UTC)), ZoneOffset.UTC)
+  def now(fixedLocalDateTime: LocalDateTime): NowProvider = new NowProvider {
+    override def apply(): Clock =
+      Clock.fixed(Instant.ofEpochSecond(fixedLocalDateTime.toEpochSecond(ZoneOffset.UTC)), ZoneOffset.UTC)
+  }
 }
