@@ -1,8 +1,8 @@
 package com.github.fulrich.testcharged.generators.temporal.dates
 
-import java.time._
+import java.time.LocalDate
 
-import com.github.fulrich.testcharged.generators.temporal.instant.InstantGenerators
+import com.github.fulrich.testcharged.generators.temporal.instant.{FromInstant, InstantGenerators, ToInstant}
 import com.github.fulrich.testcharged.generators.temporal.{NowProvider, TemporalGenerator}
 import org.scalacheck.Gen
 
@@ -13,9 +13,6 @@ object LocalDateGenerators extends TemporalGenerator[LocalDate] with DateRanges 
 
 
   def apply(min: Edge = Default, max: Edge = Default)(implicit now: NowProvider): Gen[LocalDate] = for {
-    createdInstant <- InstantGenerators(
-      Instant.ofEpochSecond(min(now.localDate).atStartOfDay(ZoneOffset.UTC).toEpochSecond),
-      Instant.ofEpochSecond(max(now.localDate).atStartOfDay(ZoneOffset.UTC).toEpochSecond)
-    )
-  } yield LocalDateTime.ofInstant(createdInstant, ZoneOffset.UTC).toLocalDate
+    createdInstant <- InstantGenerators(ToInstant(min(now.localDate)), ToInstant(max(now.localDate)))
+  } yield FromInstant.toLocalDate(createdInstant)
 }
