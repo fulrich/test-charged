@@ -14,4 +14,6 @@ object ToInstant {
 
   def apply(localDateTime: LocalDateTime): Instant =
     localDateTime.toInstant(ZoneOffset.UTC)
+
+  def apply(zonedDateTime: ZonedDateTime): Instant = zonedDateTime.toInstant
 }

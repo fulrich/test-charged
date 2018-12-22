@@ -12,6 +12,7 @@ trait NowProvider {
   def localDateTime: LocalDateTime = LocalDateTime.now(apply())
   def localTime: LocalTime = LocalTime.now(apply())
   def localDate: LocalDate = LocalDate.now(apply())
+  def zonedDateTime: ZonedDateTime = ZonedDateTime.now(apply())
 }
 
 object NowProvider {

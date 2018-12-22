@@ -23,5 +23,6 @@ class NowProviderUTest extends FunSuite with Matchers with NowDsl {
     testNow.localTime shouldBe testLocalDateTime.toLocalTime
     testNow.localDate shouldBe testLocalDateTime.toLocalDate
     testNow.localDateTime shouldBe testLocalDateTime
+    testNow.zonedDateTime shouldBe testLocalDateTime.atZone(testNow.zone)
   }
 }
