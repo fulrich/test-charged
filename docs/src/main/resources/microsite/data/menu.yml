@@ -12,7 +12,7 @@ options:
         url: docs/generators/string-generators.html
       - title: Numeric Generators
         url: docs/generators/numeric-generators.html
-     - title: Temporal Generators
+      - title: Temporal Generators
         url: docs/generators/temporal-generators.html
       - title: Other Generators
         url: docs/generators/other-generators.html
