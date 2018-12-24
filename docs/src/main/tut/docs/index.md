@@ -10,7 +10,7 @@ The most recent stable version of TestCharged can be seen on our badges [here](.
 
 
 ```scala 
-libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.1"
+libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.5"
 ```
 
 Our SNAPSHOT version is also shown on the badges [here](../index.html).
@@ -19,5 +19,5 @@ To use the newest SHAPSHOT you must include the Sonatype resolver and then add t
 ```scala
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
-libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.1-SNAPSHOT" % "test"
+libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.6-SNAPSHOT" % "test"
 ```

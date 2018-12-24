@@ -30,7 +30,7 @@ The currently released build should be shown on the badges at the top of this pa
 Simply add that dependency to your SBT file:
 
 ```scala 
-libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.1"
+libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.5"
 ```
 
 Our SNAPSHOT version is also shown at the badges on the top.  
@@ -39,5 +39,5 @@ To use the newest SHAPSHOT you must include the Sonatype resolver and then add t
 ```scala
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
-libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.1-SNAPSHOT" % "test"
+libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.6-SNAPSHOT" % "test"
 ```
