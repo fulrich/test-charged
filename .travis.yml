@@ -20,12 +20,20 @@ env:
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test coverageReport
 
+before_install:
+  - git fetch --tags
+
 before_cache:
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+stages:
+  - name: test
+  - name: release
+    if: (branch = master AND type = push) OR (tag IS present)
 
 
 jobs:
@@ -44,3 +52,5 @@ jobs:
         - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then bash scripts/publishMicrosite.sh; fi
         - if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then echo "Not in master branch, skipping deploy and release"; fi
       after_success: ignore
+    - stage: release
+      script: sbt ci-release
