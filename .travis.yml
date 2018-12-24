@@ -53,4 +53,5 @@ jobs:
         - if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then echo "Not in master branch, skipping deploy and release"; fi
       after_success: ignore
     - stage: release
+      env: JOB=Release
       script: sbt ci-release
