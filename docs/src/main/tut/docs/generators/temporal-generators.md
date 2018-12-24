@@ -22,11 +22,11 @@ The Temporal API is as follows:
 | Soon            | `Generate.localDate.soon`          |
 | Future          | `Generate.localDate.future`        |
 | Distant Future  | `Generate.localDate.distantFuture` |
-
+<br>
 The generation scale for each of these values is relative to the scale of Temporal value being generated.
 For example: 
     
-`Generate.localTime.distantPast` will be on the scale of time and therefore measured in hours.
+`Generate.localTime.distantPast` will be on the scale of time and therefore measured in hours.  
 `Generate.localDateTime.distantPast` will be on the scale of dates and therefore measured in years.
 
 As with all of the generators you can use the `apply` method to supply your own ranges.
@@ -48,7 +48,7 @@ The date scale based generators are:
 | LocalDate       | `Generate.localDate.default`     |
 | LocalDateTime   | `Generate.localDateTime.default` |
 | ZonedDateTime   | `Generate.zonedDateTime.default` |
-
+<br>
 As discussed above the date scale based generators are measured in a scale of years (in the largest case).
 Below are the ranges of the Temporal API for date scale based generators:
 
@@ -71,6 +71,7 @@ The time scale based generators are:
 | Name            | Example Usage                    |
 | --------------- | -------------------------------- |
 | LocalTime       | `Generate.localTime.default`     |
+<br>
 
 Time Scale generators are measured in a scale of hours (in the largest case).
 Below are the ranges of the Temporal API for time scale based generators:
@@ -95,6 +96,7 @@ The instant generator is below:
 | Name            | Example Usage                    |
 | --------------- | -------------------------------- |
 | Instant         | `Generate.instant.default`       |
+<br>
 
 The instant generator is unique in its Temporal API ranges.
 Below are the ranges for the instant generator:
