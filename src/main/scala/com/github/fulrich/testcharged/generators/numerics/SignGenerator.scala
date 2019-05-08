@@ -6,9 +6,9 @@ import org.scalacheck.Gen.Choose
 
 
 case class SignGenerator[T : Choose](range: T)(implicit numeric: Numeric[T]) {
-  lazy val positive: Gen[T] = Gen.chooseNum[T](numeric.zero, range)
-  lazy val negative: Gen[T] = Gen.chooseNum[T](numeric.negate(range), numeric.zero)
-  lazy val default: Gen[T] = Gen.chooseNum[T](numeric.negate(range), range)
+  lazy val positive: Gen[T] = Gen.choose[T](numeric.zero, range)
+  lazy val negative: Gen[T] = Gen.choose[T](numeric.negate(range), numeric.zero)
+  lazy val default: Gen[T] = Gen.choose[T](numeric.negate(range), range)
 }
 
 object SignGenerator {
