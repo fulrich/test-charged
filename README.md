@@ -29,3 +29,15 @@ libraryDependencies += "com.github.fulrich" %% "test-charged" % "0.1.6-SNAPSHOT"
 
 ## Documentation
 Our documentation can be found here: https://fulrich.github.io/test-charged/
+
+## Contributing
+
+### Releasing
+TestCharged used the ci-release SBT plugin: https://github.com/olafurpg/sbt-ci-release
+Every push to master that passes CI will release a SNAPSHOT with a unique version number.
+
+To release a new version git tags are utilized:
+```
+git tag -a v0.1.0 -m "v0.1.0"
+git push origin v0.1.0
+```
