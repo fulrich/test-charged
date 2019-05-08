@@ -1,7 +1,5 @@
 name := "Test Charged"
-version := "0.1.9-SNAPSHOT"
 crossScalaVersions := Seq("2.11.12", "2.12.7")
-
 
 // POM Settings
 organization := "com.github.fulrich"
