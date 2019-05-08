@@ -33,7 +33,8 @@ Our documentation can be found here: https://fulrich.github.io/test-charged/
 ## Contributing
 
 ### Releasing
-TestCharged used the ci-release SBT plugin: https://github.com/olafurpg/sbt-ci-release
+TestCharged used the ci-release SBT plugin: https://github.com/olafurpg/sbt-ci-release.
+
 Every push to master that passes CI will release a SNAPSHOT with a unique version number.
 
 To release a new version git tags are utilized:
