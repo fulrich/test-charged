@@ -14,5 +14,7 @@ options:
         url: docs/generators/numeric-generators.html
       - title: Temporal Generators
         url: docs/generators/temporal-generators.html
+      - title: Id Generators
+        url: docs/generators/id-generators.html
       - title: Other Generators
         url: docs/generators/other-generators.html
