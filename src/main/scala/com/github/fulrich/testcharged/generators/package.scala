@@ -1,5 +1,6 @@
 package com.github.fulrich.testcharged
 
+import com.github.fulrich.testcharged.generators.ids.IdGenerators
 import com.github.fulrich.testcharged.generators.temporal.TemporalGenerators
 import com.github.fulrich.testcharged.generators.locations.LocationGenerators
 import com.github.fulrich.testcharged.generators.numerics.NumericGenerators
@@ -12,4 +13,5 @@ package object generators extends GenerateDsl {
     with NumericGenerators
     with LocationGenerators
     with TemporalGenerators
+    with IdGenerators
 }
