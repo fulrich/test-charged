@@ -1,12 +1,12 @@
 package com.github.fulrich.testcharged.generators.ids
 
+import com.github.fulrich.testcharged.generators._
 import org.scalatest.{FunSuite, Matchers, OptionValues}
 
-class UuidGeneratorsUTest extends FunSuite with Matchers with OptionValues{
+class UuidGeneratorsUTest extends FunSuite with Matchers with OptionValues {
   test("Single UUID generation") {
-    val generatedUUID = UuidGenerators.uuid.sample
-  
-      generatedUUID should not be empty
-      generatedUUID.value.toString should include("-")
+    val generatedUuid = Generate.uuid.value
+    
+    generatedUuid.toString should include("-")
   }
 }
