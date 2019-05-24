@@ -17,7 +17,7 @@ object StreetGenerators {
   val MaximumStreetNumber = 9999
 
 
-  val number: Gen[Int] = Generate.int(MinimumStreetNumber, MaximumStreetNumber)
+  val number: Gen[Int] = Gen.choose(MinimumStreetNumber, MaximumStreetNumber)
   val name: Gen[String] = Gen.oneOf(Names)
   val suffix: Gen[String] = Gen.oneOf(Suffixes)
 
