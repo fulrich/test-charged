@@ -1,6 +1,7 @@
 package com.github.fulrich.testcharged.generators.locations
 
 import com.github.fulrich.testcharged.generators._
+import com.github.fulrich.testcharged.generators.numerics.IntGenerators
 import org.scalacheck.Gen
 
 import scala.io.Source
@@ -17,7 +18,7 @@ object StreetGenerators {
   val MaximumStreetNumber = 9999
 
 
-  val number: Gen[Int] = Generate.int(MinimumStreetNumber, MaximumStreetNumber)
+  val number: Gen[Int] = IntGenerators(MinimumStreetNumber, MaximumStreetNumber)
   val name: Gen[String] = Gen.oneOf(Names)
   val suffix: Gen[String] = Gen.oneOf(Suffixes)
 
