@@ -1,10 +1,11 @@
 # TestCharged
 [![Travis (.org)](https://img.shields.io/travis/fulrich/test-charged.svg?style=flat-square)](https://travis-ci.org/fulrich/test-charged)
 [![Codecov](https://img.shields.io/codecov/c/github/fulrich/test-charged.svg?style=flat-square)](https://codecov.io/gh/fulrich/test-charged)
-[![Scala Versions](https://img.shields.io/badge/scala-2.11%20%7C%202.12-blue.svg?style=flat-square)](https://github.com/fulrich/TestCharged/blob/455d73f549c5edd0d71d2d13748cd8c458483d20/build.sbt#L3)
+[![Scala Versions](https://img.shields.io/badge/scala-2.11%20%7C%202.12%20%7C%202.13-blue.svg?style=flat-square)](https://github.com/fulrich/TestCharged/blob/455d73f549c5edd0d71d2d13748cd8c458483d20/build.sbt#L3)
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://search.maven.org/artifact/com.github.fulrich/test-charged_2.12/0.1.5/jar)
-[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.github.fulrich/test-charged_2.12.svg?style=flat-square)](https://oss.sonatype.org/content/repositories/snapshots/com/github/fulrich/test-charged_2.12/)
+[![Maven Central](https://img.shields.io/nexus/r/https/oss.sonatype.org/com.github.fulrich/test-charged_2.11.svg?label=latest%202.11&style=flat-square)](https://repo1.maven.org/maven2/com/github/fulrich/test-charged_2.11/)
+[![Maven Central](https://img.shields.io/nexus/r/https/oss.sonatype.org/com.github.fulrich/test-charged_2.12.svg?label=latest%202.12&style=flat-square)](https://repo1.maven.org/maven2/com/github/fulrich/test-charged_2.12/)
+[![Maven Central](https://img.shields.io/nexus/r/https/oss.sonatype.org/com.github.fulrich/test-charged_2.13.svg?label=latest%202.13&style=flat-square)](https://repo1.maven.org/maven2/com/github/fulrich/test-charged_2.13/)
 
 A small library with helpers for generating test data through a simple DSL.
 
