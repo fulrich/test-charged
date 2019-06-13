@@ -3,7 +3,8 @@ sudo: false
 language: scala
 
 scala:
-  - 2.12.7
+  - 2.13.0
+  - 2.12.8
   - 2.11.12
 
 jdk:
@@ -33,7 +34,7 @@ after_success:
 stages:
   - name: test
   - name: release
-    if: ((branch = master AND type = push) OR (tag IS present)) AND NOT fork
+    if: tag IS present AND NOT fork
 
 
 jobs:

@@ -1,10 +1,9 @@
-name := "Test Charged"
-crossScalaVersions := Seq("2.11.12", "2.12.8")
-
 inThisBuild(List(
+  name := "Test Charged",
   organization := "com.github.fulrich",
   homepage := Some(url("https://github.com/fulrich/testcharged")),
   licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+  crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0"),
   developers := List(
     Developer(
       "fulrich",
@@ -16,13 +15,13 @@ inThisBuild(List(
 ))
 
 // Dependencies
-val ScalacticVersion = "3.0.5"
+val ScalacticVersion = "3.0.8"
 val ScalaCheckVersion = "1.14.0"
 
 libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % ScalaCheckVersion,
   "org.scalactic" %% "scalactic" % ScalacticVersion,
-  "org.scalatest" %% "scalatest" % ScalacticVersion % "test",
+  "org.scalatest" %% "scalatest" % ScalacticVersion % Test,
 )
 
 // Documentation
