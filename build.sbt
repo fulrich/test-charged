@@ -1,5 +1,6 @@
+name := "Test Charged"
+
 inThisBuild(List(
-  name := "Test Charged",
   organization := "com.github.fulrich",
   homepage := Some(url("https://github.com/fulrich/testcharged")),
   licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
