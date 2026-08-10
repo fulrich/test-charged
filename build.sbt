@@ -40,13 +40,13 @@ val ScalacticVersion = "3.2.20"
 
 val ScalaCheckVersion = "1.19.0"
 
-val ScalaCheckPlusVersion = "3.2.19.0"
+val ScalaCheckPlusVersion = "3.2.20.0"
 
 libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % ScalaCheckVersion,
   "org.scalactic" %% "scalactic" % ScalacticVersion,
   "org.scalatest" %% "scalatest" % ScalacticVersion % Test,
-  "org.scalatestplus" %% "scalacheck-1-18" % ScalaCheckPlusVersion % Test
+  "org.scalatestplus" %% "scalacheck-1-19" % ScalaCheckPlusVersion % Test
 )
 
 lazy val root = project in file(".")
