@@ -16,7 +16,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || vars.RUN_SCALA_STEWARD
     steps:
       - name: Scala Steward
-        uses: scala-steward-org/scala-steward-action@v2.92.0
+        uses: scala-steward-org/scala-steward-action@v2.96.0
         with:
           author-email: jenkins@garnercorp.com
           author-name: GarnerUser
