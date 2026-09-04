@@ -1,0 +1,19 @@
+name: AI Spell Check
+
+on: pull_request
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  spell-check:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Spell check
+        uses: GarnerCorp/build-actions/spell-check@main
+        with:
+          openai-api-key: ${{ secrets.SPELL_CHECK_OPENAI_API_KEY }}
+          fail-on-suggestions: false
